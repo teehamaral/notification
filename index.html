@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Alert</title>
+	<script>
+		function notify() {
+			Notification.requestPermission(function() {
+				var notification = new Notification("Title", {
+					icon: 'http://i.stack.imgur.com/dmHl0.png',
+					body: "Description"
+				});
+				notification.onclick = function() {
+					window.open("http://teehamaral.me");
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+
+	<h2>Notification</h2>
+
+	<input type="submit" value="Notify" onclick="notify()">
+
+</body>
+</html>
